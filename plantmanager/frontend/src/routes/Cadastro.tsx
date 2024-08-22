@@ -20,6 +20,7 @@ const Cadastro = () => {
         value={nome}
         onChange={(e) => setNome(e.target.value)}
         required
+        name="name"
       />
 
       <label>Email:</label>
@@ -29,6 +30,7 @@ const Cadastro = () => {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         required
+        name="email"
       />
 
       <label>Senha:</label>
@@ -38,6 +40,7 @@ const Cadastro = () => {
         value={senha}
         onChange={(e) => setSenha(e.target.value)}
         required
+        name="password"
       />
 
       <label>Confirme a senha:</label>
@@ -47,6 +50,7 @@ const Cadastro = () => {
         value={confirmeSenha}
         onChange={(e) => setConfirmeSenha(e.target.value)}
         required
+        name="confirmPassword"
       />
       <button><Link to={"/login"}>Cadastrar</Link></button>
     </form>

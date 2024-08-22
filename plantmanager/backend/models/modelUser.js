@@ -4,7 +4,7 @@ const {Schema} = moongose
 const userSchema = new Schema({
     name: String,
     email: String,
-    senha: String,
+    password: String,
 },{
     timestamps: true
 })

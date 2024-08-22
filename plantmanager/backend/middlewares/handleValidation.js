@@ -1,10 +1,8 @@
-const {validaResult} = require("express-validator")
+const {validationResult} = require("express-validator")
 
-
-
-const validate = (req, res) =>{
+const validate = (req, res, next) =>{
     
-    const erros = validaResult(req)
+    const erros = validationResult(req)
 
     if(erros.isEmpty()){
         return next()
@@ -17,6 +15,7 @@ const validate = (req, res) =>{
     return res.status(422).json({
         erros: extractedErros
     })
+   
 }
 
 module.exports = validate
