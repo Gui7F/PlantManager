@@ -5,8 +5,8 @@ const createUserValidation = () => {
      body("name")
         .isString()
         .withMessage("Nome é obrigátorio para cadastro")
-        .isLength({min: 5, max: 30})
-        .withMessage("Nome de usuário tem ter entre 5 e 30 caracteres"),
+        .isLength({min: 5})
+        .withMessage("O nome de usuário precisa ter pelo menos 5 caracteres"),
 
      body("email")
          .isString()
@@ -45,7 +45,22 @@ const loginValidation = () => {
     ]
 }
 
+const upadateUserValidation = () => {
+    return [
+        body("name")
+         .optional()
+         .isLength({min: 5})
+         .withMessage("O nome de usuário precisa ter pelo menos 5 caracteres"),
+        body("password")
+         .optional()
+         .isLength({min: 8})
+         .withMessage("A senha precisa ter pelo menos 8 caracteres")
+
+    ]
+}
+
 module.exports = {
     createUserValidation,
-    loginValidation
+    loginValidation,
+    upadateUserValidation
 }
